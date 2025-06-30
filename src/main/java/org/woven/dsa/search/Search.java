@@ -3,15 +3,15 @@ package org.woven.dsa.search;
 public class Search {
     /**
      * Performs a linear search on an array to find the index of a target value.
-     * * This method iterates through the array and checks each element against the target.
-     * * Time complexity: O(n), where n is the number of elements in the array.
-     * * @throws IllegalArgumentException if the input array is null.
-     * * This implementation assumes that the input array is not sorted.
-     * * This method returns the index of the target value if found, or -1 if the target is not present in the array.
+     * <p>
+     * Iterates through the array and checks each element against the target.
+     * Time complexity: O(n), where n is the number of elements in the array.
+     * </p>
      *
-     * @param arr
-     * @param target
-     * @return
+     * @param arr    the array to search (may be unsorted)
+     * @param target the value to search for
+     * @return the index of the target value if found; -1 if the target is not present
+     * @throws IllegalArgumentException if the input array is null
      */
     public static int linearSearch(int[] arr, int target) {
         if (arr == null) {
@@ -27,15 +27,16 @@ public class Search {
 
     /**
      * Performs a binary search on a sorted array to find the index of a target value.
-     * * This method uses a divide-and-conquer approach to efficiently search for the target.
-     * * * Time complexity: O(log n), where n is the number of elements in the array.
-     * * * @throws IllegalArgumentException if the input array is null or not sorted.
-     * * * This implementation assumes that the input array is sorted in ascending order.
-     * * * This method returns the index of the target value if found, or -1 if the target is not present in the array.
+     * <p>
+     * Uses a divide-and-conquer approach to efficiently search for the target.
+     * Time complexity: O(log n), where n is the number of elements in the array.
+     * The input array must be sorted in ascending order.
+     * </p>
      *
-     * @param arr
-     * @param target
-     * @return
+     * @param arr    the sorted array to search
+     * @param target the value to search for
+     * @return the index of the target value if found; -1 if the target is not present
+     * @throws IllegalArgumentException if the input array is null
      */
     public static int binarySearch(int[] arr, int target) {
         if (arr == null) {
@@ -57,24 +58,24 @@ public class Search {
 
     /**
      * Performs a jump search on a sorted array to find the index of a target value.
-     * * This method divides the array into blocks and performs a linear search within the block where the target may be located.
-     * * Time complexity: O(√n), where n is the number of elements in the array.
-     * * @throws IllegalArgumentException if the input array is null or not sorted.
-     * * This implementation assumes that the input array is sorted in ascending order.
-     * * This method returns the index of the target value if found, or -1 if the target is not present in the array.
+     * <p>
+     * Divides the array into blocks and performs a linear search within the block
+     * where the target may be located. Time complexity: O(√n), where n is the number
+     * of elements in the array. The input array must be sorted in ascending order.
+     * </p>
      *
-     * @param arr
-     * @param target
-     * @return
+     * @param arr    the sorted array to search
+     * @param target the value to search for
+     * @return the index of the target value if found; -1 if the target is not present
+     * @throws IllegalArgumentException if the input array is null
      */
-
-    public static int jumpSearch(int[] arr, int target) {
-        int n = arr.length;
-        int step = (int) Math.sqrt(n);
-        int prev = 0;
+    public static int jumpSearch(final int[] arr, final int target) {
         if (arr == null) {
             throw new IllegalArgumentException("Input array cannot be null");
         }
+        int n = arr.length;
+        int step = (int) Math.sqrt(n);
+        int prev = 0;
 
         while (arr[Math.min(step, n) - 1] < target) {
             prev = step;
