@@ -1,0 +1,6 @@
+[0.083s][info][gc] Using Parallel
+[0.994s][info][gc] GC(0) Pause Young (Allocation Failure) 47M->41M(120M) 18.434ms
+[1.730s][info][gc] GC(1) Pause Full (Ergonomics) 89M->87M(120M) 24.478ms
+[2.089s][info][gc] GC(2) Pause Full (Ergonomics) 110M->109M(120M) 11.260ms
+[2.118s][info][gc] GC(3) Pause Full (Ergonomics) 111M->110M(120M) 7.909ms
+[2.135s][info][gc] GC(4) Pause Full (Allocation Failure) 110M->110M(120M) 15.679ms
